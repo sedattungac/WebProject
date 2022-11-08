@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Personal>
+@{
+    ViewData["Title"] = "Personals";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<div class="row site-section">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-7">
+                <div class="row mb-5">
+                    <div class="col-12 ">
+                        <h2 class="site-section-heading text-center">Personellerimiz</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5">
+                    <img src="@item.ImageUrl" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+                    <h2 class="text-black font-weight-light mb-4">@item.FullName</h2>
+                    <p class="mb-4"> Telefon : <a href="tel:@item.Telephone"> @item.Telephone</a></p>
+                    <p>
+                        <a href="tel:@item.Telephone" class="pl-0 pr-3"><span class="icon-whatsapp"></span></a>
+
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

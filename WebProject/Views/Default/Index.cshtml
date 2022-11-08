@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<ImageCategory>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<div class="container-fluid" data-aos="fade" data-aos-delay="500">
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+
+                <div class="image-wrap-2">
+                    <div class="image-info">
+                        <h2 class="mb-3">@item.Title</h2>
+                        <a href="/Default/Images/@item.ImageCategoryID" class="btn btn-outline-white py-2 px-4">Daha Fazla</a>
+                    </div>
+                    <img src="@item.ImageUrl" alt="Image" class="img-fluid">
+                </div>
+
+            </div>
+        }
+    </div>
+
+
+</div>
+
+@*/photosen/images/img_1.jpg
+
+/photosen/images/big-images/nature_big_1.jpg*@

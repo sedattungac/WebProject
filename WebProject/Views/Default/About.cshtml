@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<div class="site-section" data-aos="fade">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-7">
+                <div class="row mb-5">
+                    <div class="col-12 ">
+                        <h2 class="site-section-heading text-center">Hakkımızda</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mb-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-7">
+                    <img src="@item.ImageUrl" alt="Images" class="img-fluid">
+                </div>
+                <div class="col-md-4 ml-auto">
+                    <h3 class="text-white">@item.Title</h3>
+                    <p>@item.Description</p>
+                    <p>@item.Description2</p>
+                </div>
+            }
+
+        </div>
+
+
+
+    </div>
+</div>
